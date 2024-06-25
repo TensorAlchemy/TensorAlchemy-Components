@@ -1,0 +1,61 @@
+{
+  "name": "tensoralchemy-components",
+  "private": false,
+  "version": "1.0.0",
+  "description": "TensorAlchemy Components",
+  "keywords": [
+    "TensorAlchemy",
+    "Components"
+  ],
+  "author": "TensorAlchemy",
+  "license": "MIT",
+  "homepage": "https://github.com/TensorAlchemy/TensorAlchemy-Components#readme",
+  "bugs": {
+    "url": "https://github.com/TensorAlchemy/TensorAlchemy-Components/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TensorAlchemy/TensorAlchemy-Components.git"
+  },
+  "engines": {
+    "node": ">= 22.2.0",
+    "npm": ">= 10.7.0"
+  },
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "css": "npx tailwindcss -i src/style.css -o lib/style.css",
+    "dev": "tsc -w & npx tailwindcss -i src/style.css -o lib/style.css --watch",
+    "style": "prettier . --write -u",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.19",
+    "clsx": "^2.0.0",
+    "framer-motion": "^11.2.10",
+    "globals": "^15.6.0",
+    "lucide-react": "^0.303.0",
+    "postcss": "^8.4.38",
+    "postcss-nesting": "^12.1.2",
+    "react": "^18.3.1",
+    "tailwindcss": "^3.4.3",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^8.56.0",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^20.12.11",
+    "@types/react": "^18.3.1",
+    "eslint": "^8",
+    "eslint-plugin-react": "^7.34.2",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.3.1",
+    "prettier-plugin-tailwindcss": "^0.5.10",
+    "typescript-eslint": "^7.12.0"
+  }
+}
