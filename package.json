@@ -27,7 +27,7 @@
     "build": "tsc",
     "css": "npx tailwindcss -i src/style.css -o lib/style.css",
     "dev": "tsc -w & npx tailwindcss -i src/style.css -o lib/style.css --watch",
-    "style": "prettier . --write -u",
+    "style": "prettier --write . --u",
     "lint": "eslint src"
   },
   "dependencies": {

@@ -15,7 +15,10 @@
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"]
     },
-    "outDir": "lib"
+    "outDir": "lib",
+    "declaration": true,
+    "declarationDir": "lib/types.ts",
+    "typeRoots": ["node_modules/@types", "types.d.ts"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "types.d.ts"]
 }

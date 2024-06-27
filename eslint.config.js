@@ -1,7 +1,7 @@
-import js from "@eslint/js";
-import tseslint from "typescript-eslint";
-import reactConfig from "eslint-plugin-react/configs/recommended.js";
-import globals from "globals";
+import js from "@eslint/js"
+import tseslint from "typescript-eslint"
+import reactConfig from "eslint-plugin-react/configs/recommended.js"
+import globals from "globals"
 
 export default [
   js.configs.recommended,
@@ -32,4 +32,4 @@ export default [
       "react/jsx-uses-vars": "error",
     },
   },
-];
+]

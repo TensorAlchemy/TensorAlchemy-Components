@@ -1,10 +1,8 @@
-"use client"
+import React, {useState} from "react"
+import {Check, ChevronsUpDown} from "lucide-react"
 
-import * as React from "react"
-import { Check, ChevronsUpDown } from "lucide-react"
-
-import { cn } from "@app/utils"
-import { Button } from "@app/components/Button"
+import {cn} from "@app/utils"
+import {Button} from "@app/components/Button"
 import {
   Command,
   CommandEmpty,
@@ -12,15 +10,11 @@ import {
   CommandInput,
   CommandItem,
 } from "@app/components/Command"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@components/Popover"
+import {Popover, PopoverContent, PopoverTrigger} from "@components/Popover"
 
-export function Combobox({options}: {options: {label: string, value: string}[]}) {
-  const [open, setOpen] = React.useState(false)
-  const [value, setValue] = React.useState("")
+export function Combobox({options}: {options: {label: string; value: string}[]}) {
+  const [open, setOpen] = useState(false)
+  const [value, setValue] = useState("")
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -54,7 +48,7 @@ export function Combobox({options}: {options: {label: string, value: string}[]})
                 <Check
                   className={cn(
                     "mr-2 h-4 w-4",
-                    value === option.value ? "opacity-100" : "opacity-0"
+                    value === option.value ? "opacity-100" : "opacity-0",
                   )}
                 />
                 {option.label}
