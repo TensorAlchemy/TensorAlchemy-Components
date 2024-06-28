@@ -1,18 +1,18 @@
-const plugin = require("tailwindcss/plugin");
-const defaultColors = require("tailwindcss/colors");
+const plugin = require("tailwindcss/plugin")
+const defaultColors = require("tailwindcss/colors")
 
 /** @type {import('tailwindcss').Config} */
 const config = {
   darkMode: ["class"],
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./src/**/*.{ts,tsx}"],
   prefix: "",
   plugins: [
     require("@tailwindcss/typography"),
     require("tailwindcss-animate"),
-    plugin(({ addVariant }) => {
-      addVariant("group-hover", [".group:hover &", ".group.hover &"]);
-      addVariant("hover", ["&:hover", "&.hover"]);
-      addVariant("active", ["&:active", "&.active"]);
+    plugin(({addVariant}) => {
+      addVariant("group-hover", [".group:hover &", ".group.hover &"])
+      addVariant("hover", ["&:hover", "&.hover"])
+      addVariant("active", ["&:active", "&.active"])
     }),
   ],
   variants: {
@@ -37,6 +37,16 @@ const config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-sans)", "sans-serif"],
+      },
+      keyframes: {
+        "accordion-down": {
+          from: {height: "0"},
+          to: {height: "var(--radix-accordion-content-height)"},
+        },
+        "accordion-up": {
+          from: {height: "var(--radix-accordion-content-height)"},
+          to: {height: "0"},
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -69,6 +79,6 @@ const config = {
       },
     },
   },
-};
+}
 
-export default config;
+export default config
