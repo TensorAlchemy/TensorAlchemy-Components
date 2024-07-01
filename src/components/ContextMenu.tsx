@@ -1,8 +1,29 @@
-import React, {ElementRef, forwardRef, ComponentPropsWithoutRef, HTMLAttributes} from "react"
-import {Root, Trigger, Group, Portal, Sub, SubContent, Separator, RadioGroup, SubTrigger, Content, Item, CheckboxItem, RadioItem, Label, ItemIndicator} from "@radix-ui/react-context-menu"
+import React, {
+  ElementRef,
+  forwardRef,
+  ComponentPropsWithoutRef,
+  HTMLAttributes,
+} from "react"
+import {
+  Root,
+  Trigger,
+  Group,
+  Portal,
+  Sub,
+  SubContent,
+  Separator,
+  RadioGroup,
+  SubTrigger,
+  Content,
+  Item,
+  CheckboxItem,
+  RadioItem,
+  Label,
+  ItemIndicator,
+} from "@radix-ui/react-context-menu"
 import {Check, ChevronRight, Circle} from "lucide-react"
 
-import {cn} from "@app/utils"
+import {cn} from "../utils.js"
 
 const ContextMenu = Root
 const ContextMenuTrigger = Trigger

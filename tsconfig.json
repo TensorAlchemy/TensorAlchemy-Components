@@ -2,22 +2,15 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
-    "module": "es6",
-    "target": "es5",
+    "module": "nodenext",
+    "target": "es6",
     "allowJs": true,
     "jsx": "react",
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
     "baseUrl": ".",
-    "paths": {
-      "@app/*": ["src/*"],
-      "@context/*": ["src/context/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@components/*": ["src/components/*"],
-      "@assets/*": ["src/assets/*"]
-    },
     "outDir": "lib",
     "declaration": true,
-    "declarationDir": "lib/types.ts",
+    "declarationDir": "lib/index.d.ts",
     "typeRoots": ["node_modules/@types", "types.d.ts"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "types.d.ts"]

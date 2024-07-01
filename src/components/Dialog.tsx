@@ -1,20 +1,32 @@
-import React, {forwardRef, ElementRef, ComponentPropsWithoutRef, HTMLAttributes} from "react"
-import {Content, Overlay, Title, Description, Root, Trigger, Portal, Close} from "@radix-ui/react-dialog"
+import React, {
+  forwardRef,
+  ElementRef,
+  ComponentPropsWithoutRef,
+  HTMLAttributes,
+} from "react"
+import {
+  Content,
+  Overlay,
+  Title,
+  Description,
+  Root,
+  Trigger,
+  Portal,
+  Close,
+} from "@radix-ui/react-dialog"
 
 import {X} from "lucide-react"
 
-import type {FC} from 'react'
+import type {FC} from "react"
 
-import {cn} from "@app/utils"
+import {cn} from "../utils.js"
 
 const Dialog = Root
 const DialogTrigger = Trigger
 const DialogPortal = Portal
 const DialogClose = Close
 
-export interface Props {
-
-}
+export interface Props {}
 
 const DialogOverlay: FC<Props> = forwardRef<
   ElementRef<typeof Overlay>,

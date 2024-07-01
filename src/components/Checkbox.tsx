@@ -2,7 +2,7 @@ import React, {ElementRef, ComponentPropsWithoutRef, forwardRef} from "react"
 import {Indicator, Root} from "@radix-ui/react-checkbox"
 import {Check} from "lucide-react"
 
-import {cn} from "@app/utils"
+import {cn} from "../utils.js"
 
 const Checkbox = forwardRef<
   ElementRef<typeof Root>,
@@ -16,9 +16,7 @@ const Checkbox = forwardRef<
     )}
     {...props}
   >
-    <Indicator
-      className={cn("flex items-center justify-center text-current")}
-    >
+    <Indicator className={cn("flex items-center justify-center text-current")}>
       <Check className="h-4 w-4" />
     </Indicator>
   </Root>
