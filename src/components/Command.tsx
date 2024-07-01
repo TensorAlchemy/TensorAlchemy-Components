@@ -1,4 +1,9 @@
-import React, {forwardRef, ElementRef, HTMLAttributes, ComponentPropsWithoutRef} from "react"
+import React, {
+  forwardRef,
+  ElementRef,
+  HTMLAttributes,
+  ComponentPropsWithoutRef,
+} from "react"
 import {type DialogProps} from "@radix-ui/react-dialog"
 import {Command as CommandPrimitive} from "cmdk"
 import {Search} from "lucide-react"
@@ -41,7 +46,7 @@ const CommandInput = forwardRef<
   ElementRef<typeof Input>,
   ComponentPropsWithoutRef<typeof Input>
 >(({className, ...props}, ref) => (
-  <div className="flex items-center border-b px-3" cmdk-input-wrapper="">
+  <div className="flex items-center border-b px-3">
     <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
     <Input
       ref={ref}
@@ -72,9 +77,7 @@ CommandList.displayName = List.displayName
 const CommandEmpty = forwardRef<
   ElementRef<typeof Empty>,
   ComponentPropsWithoutRef<typeof Empty>
->((props, ref) => (
-  <Empty ref={ref} className="py-6 text-center text-sm" {...props} />
-))
+>((props, ref) => <Empty ref={ref} className="py-6 text-center text-sm" {...props} />)
 
 CommandEmpty.displayName = Empty.displayName
 
@@ -98,11 +101,7 @@ const CommandSeparator = forwardRef<
   ElementRef<typeof Separator>,
   ComponentPropsWithoutRef<typeof Separator>
 >(({className, ...props}, ref) => (
-  <Separator
-    ref={ref}
-    className={cn("-mx-1 h-px bg-border", className)}
-    {...props}
-  />
+  <Separator ref={ref} className={cn("-mx-1 h-px bg-border", className)} {...props} />
 ))
 CommandSeparator.displayName = Separator.displayName
 
@@ -122,10 +121,7 @@ const CommandItem = forwardRef<
 
 CommandItem.displayName = Item.displayName
 
-const CommandShortcut = ({
-  className,
-  ...props
-}: HTMLAttributes<HTMLSpanElement>) => {
+const CommandShortcut = ({className, ...props}: HTMLAttributes<HTMLSpanElement>) => {
   return (
     <span
       className={cn("ml-auto text-xs tracking-widest text-muted-foreground", className)}

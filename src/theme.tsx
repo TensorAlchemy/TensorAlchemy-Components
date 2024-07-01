@@ -1,10 +1,8 @@
-"use client"
-
 import React, {createContext, useContext, useState, useEffect} from "react"
 
 import type {FC, ReactNode} from "react"
 
-enum ThemeMode {
+export enum ThemeMode {
   LIGHT = "light",
   DARK = "dark",
   SYSTEM = "system",
@@ -17,7 +15,12 @@ interface Theme {
 
 const ThemeContext = createContext({})
 
-export const useAuthContext = () => useContext(ThemeContext)
+export const useThemeContext = () => useContext(ThemeContext)
+
+const getSystemThemeMode = (): ThemeMode =>
+  window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? ThemeMode.DARK
+    : ThemeMode.LIGHT
 
 const styles = {}
 
@@ -25,19 +28,23 @@ interface Props {
   children?: ReactNode
 }
 
-const ThemeProvider: FC<Props> = ({children}: Props) => {
+const Theme: FC<Props> = ({children}: Props) => {
   const [themeMode, setThemeMode] = useState<ThemeMode | null>(null)
 
   useEffect(() => {
-    setThemeMode(localStorage.getItem("theme") as ThemeMode)
+    const theme = localStorage.getItem("theme") || getSystemThemeMode()
+
+    if (theme) {
+      setThemeMode(theme as ThemeMode)
+    }
   }, [])
 
   const value = {
-    themeMode: ThemeMode,
+    themeMode,
     setThemeMode: (themeMode: ThemeMode) => setThemeMode(themeMode),
   }
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
 }
 
-export default ThemeProvider
+export {Theme}

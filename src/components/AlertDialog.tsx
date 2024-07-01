@@ -4,7 +4,17 @@ import React, {
   ComponentPropsWithoutRef,
   HTMLAttributes,
 } from "react"
-import {Overlay, Root, Trigger, Portal, Title, Description, Action, Cancel, Content} from "@radix-ui/react-alert-dialog"
+import {
+  Overlay,
+  Root,
+  Trigger,
+  Portal,
+  Title,
+  Description,
+  Action,
+  Cancel,
+  Content,
+} from "@radix-ui/react-alert-dialog"
 
 import {cn} from "@app/utils"
 import {buttonVariants} from "@app/components/Button"
@@ -69,11 +79,7 @@ const AlertDialogTitle = forwardRef<
   ElementRef<typeof Title>,
   ComponentPropsWithoutRef<typeof Title>
 >(({className, ...props}, ref) => (
-  <Title
-    ref={ref}
-    className={cn("text-lg font-semibold", className)}
-    {...props}
-  />
+  <Title ref={ref} className={cn("text-lg font-semibold", className)} {...props} />
 ))
 AlertDialogTitle.displayName = Title.displayName
 
@@ -93,11 +99,7 @@ const AlertDialogAction = forwardRef<
   ElementRef<typeof Action>,
   ComponentPropsWithoutRef<typeof Action>
 >(({className, ...props}, ref) => (
-  <Action
-    ref={ref}
-    className={cn(buttonVariants(), className)}
-    {...props}
-  />
+  <Action ref={ref} className={cn(buttonVariants(), className)} {...props} />
 ))
 AlertDialogAction.displayName = Action.displayName
 

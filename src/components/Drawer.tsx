@@ -1,9 +1,17 @@
-import React, {ComponentProps, forwardRef, ElementRef, HTMLAttributes, ComponentPropsWithoutRef} from "react"
+import React, {
+  ComponentProps,
+  forwardRef,
+  ElementRef,
+  HTMLAttributes,
+  ComponentPropsWithoutRef,
+} from "react"
 import {Drawer as DrawerPrimitive} from "vaul"
 
 import {cn} from "@app/utils"
 
-const {Trigger, Portal, Close, Overlay, Content, Title, Description} = {...DrawerPrimitive}
+const {Trigger, Portal, Close, Overlay, Content, Title, Description} = {
+  ...DrawerPrimitive,
+}
 
 const Drawer = ({
   shouldScaleBackground = true,

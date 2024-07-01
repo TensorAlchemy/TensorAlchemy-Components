@@ -2,17 +2,17 @@ import React, {useState} from "react"
 import {Check, ChevronsUpDown} from "lucide-react"
 
 import {cn} from "@app/utils"
-import {Button} from "@app/components/Button"
+import {Button} from "@components/Button"
 import {
   Command,
   CommandEmpty,
   CommandGroup,
   CommandInput,
   CommandItem,
-} from "@app/components/Command"
+} from "@components/Command"
 import {Popover, PopoverContent, PopoverTrigger} from "@components/Popover"
 
-export function Combobox({options}: {options: {label: string; value: string}[]}) {
+const Combobox = ({options}: {options: {label: string; value: string}[]}) => {
   const [open, setOpen] = useState(false)
   const [value, setValue] = useState("")
 
@@ -40,7 +40,7 @@ export function Combobox({options}: {options: {label: string; value: string}[]})
               <CommandItem
                 key={option.value}
                 value={option.value}
-                onSelect={(currentValue: any) => {
+                onSelect={(currentValue: string) => {
                   setValue(currentValue === value ? "" : currentValue)
                   setOpen(false)
                 }}
@@ -60,3 +60,5 @@ export function Combobox({options}: {options: {label: string; value: string}[]})
     </Popover>
   )
 }
+
+export {Combobox}

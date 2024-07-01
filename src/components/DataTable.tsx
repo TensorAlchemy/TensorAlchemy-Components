@@ -20,10 +20,7 @@ interface DataTableProps<TData, TValue> {
   data: TData[]
 }
 
-export function DataTable<TData, TValue>({
-  columns,
-  data,
-}: DataTableProps<TData, TValue>) {
+const DataTable = <TData, TValue>({columns, data}: DataTableProps<TData, TValue>) => {
   const table = useReactTable({
     data,
     columns,
@@ -61,9 +58,7 @@ export function DataTable<TData, TValue>({
             ))
           ) : (
             <TableRow>
-              <TableCell colSpan={columns.length} className="h-24 text-center">
-                No results.
-              </TableCell>
+              <TableCell className="h-24 text-center">No results.</TableCell>
             </TableRow>
           )}
         </TableBody>
@@ -71,3 +66,5 @@ export function DataTable<TData, TValue>({
     </div>
   )
 }
+
+export {DataTable}
