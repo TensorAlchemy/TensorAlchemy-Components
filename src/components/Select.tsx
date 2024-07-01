@@ -18,7 +18,7 @@ import {
 } from "@radix-ui/react-select"
 import {Check, ChevronDown, ChevronUp} from "lucide-react"
 
-import {cn} from "@app/utils"
+import {cn} from "../utils.js"
 
 const Select = Root
 const SelectGroup = Group

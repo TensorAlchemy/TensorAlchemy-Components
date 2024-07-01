@@ -12,7 +12,7 @@ import {
 import {cva} from "class-variance-authority"
 import {ChevronDown} from "lucide-react"
 
-import {cn} from "@app/utils"
+import {cn} from "../utils.js"
 
 const NavigationMenu = forwardRef<
   ElementRef<typeof Root>,

@@ -1,7 +1,7 @@
 import React, {forwardRef, ElementRef, ComponentPropsWithoutRef} from "react"
 import {Root, Thumb} from "@radix-ui/react-switch"
 
-import {cn} from "@app/utils"
+import {cn} from "../utils.js"
 
 const Switch = forwardRef<
   ElementRef<typeof Root>,

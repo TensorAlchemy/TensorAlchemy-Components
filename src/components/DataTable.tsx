@@ -13,7 +13,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@components/Table"
+} from "../components/Table.js"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]

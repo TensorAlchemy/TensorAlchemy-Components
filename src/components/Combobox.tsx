@@ -1,16 +1,16 @@
 import React, {useState} from "react"
 import {Check, ChevronsUpDown} from "lucide-react"
 
-import {cn} from "@app/utils"
-import {Button} from "@components/Button"
+import {cn} from "../utils.js"
+import {Button} from "../components/Button.js"
 import {
   Command,
   CommandEmpty,
   CommandGroup,
   CommandInput,
   CommandItem,
-} from "@components/Command"
-import {Popover, PopoverContent, PopoverTrigger} from "@components/Popover"
+} from "../components/Command.js"
+import {Popover, PopoverContent, PopoverTrigger} from "../components/Popover.js"
 
 const Combobox = ({options}: {options: {label: string; value: string}[]}) => {
   const [open, setOpen] = useState(false)

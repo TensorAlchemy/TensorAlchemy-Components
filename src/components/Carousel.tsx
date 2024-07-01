@@ -7,12 +7,13 @@ import React, {
   forwardRef,
   HTMLAttributes,
   ComponentProps,
+  KeyboardEvent,
 } from "react"
 import useEmblaCarousel, {type UseEmblaCarouselType} from "embla-carousel-react"
 import {ArrowLeft, ArrowRight} from "lucide-react"
 
-import {cn} from "@app/utils"
-import {Button} from "@app/components/Button"
+import {cn} from "../utils.js"
+import {Button} from "../components/Button.js"
 
 type CarouselApi = UseEmblaCarouselType[1]
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
@@ -83,7 +84,7 @@ const Carousel = forwardRef<
     }, [api])
 
     const handleKeyDown = useCallback(
-      (event: KeyboardEvent) => {
+      (event: KeyboardEvent<HTMLDivElement>) => {
         if (event.key === "ArrowLeft") {
           event.preventDefault()
           scrollPrev()

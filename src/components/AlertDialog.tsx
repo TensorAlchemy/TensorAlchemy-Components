@@ -16,8 +16,8 @@ import {
   Content,
 } from "@radix-ui/react-alert-dialog"
 
-import {cn} from "@app/utils"
-import {buttonVariants} from "@app/components/Button"
+import {cn} from "../utils.js"
+import {buttonVariants} from "../components/Button.js"
 
 const AlertDialog = Root
 const AlertDialogTrigger = Trigger

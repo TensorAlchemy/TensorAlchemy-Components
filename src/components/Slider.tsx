@@ -1,7 +1,7 @@
 import React, {forwardRef, ElementRef, ComponentPropsWithoutRef} from "react"
 import {Root, Track, Range, Thumb} from "@radix-ui/react-slider"
 
-import {cn} from "@app/utils"
+import {cn} from "../utils.js"
 
 const Slider = forwardRef<
   ElementRef<typeof Root>,

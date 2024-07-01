@@ -19,7 +19,7 @@ import {X} from "lucide-react"
 
 import type {FC} from "react"
 
-import {cn} from "@app/utils"
+import {cn} from "../utils.js"
 
 const Dialog = Root
 const DialogTrigger = Trigger

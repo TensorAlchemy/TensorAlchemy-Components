@@ -24,7 +24,7 @@ import {
 } from "@radix-ui/react-menubar"
 import {Check, ChevronRight, Circle} from "lucide-react"
 
-import {cn} from "@app/utils"
+import {cn} from "../utils.js"
 
 const MenubarMenu = Menu
 const MenubarGroup = Group

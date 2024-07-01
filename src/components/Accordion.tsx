@@ -2,7 +2,7 @@ import React, {forwardRef, ElementRef, ComponentPropsWithoutRef} from "react"
 import {Root, Item, Trigger, Header, Content} from "@radix-ui/react-accordion"
 import {ChevronDown} from "lucide-react"
 
-import {cn} from "@app/utils"
+import {cn} from "../utils.js"
 
 const Accordion = Root
 

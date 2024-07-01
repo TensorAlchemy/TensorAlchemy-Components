@@ -4,7 +4,7 @@ import {ChevronRight, MoreHorizontal} from "lucide-react"
 
 import type {ReactNode} from "react"
 
-import {cn} from "@app/utils"
+import {cn} from "../utils.js"
 
 const Breadcrumb = forwardRef<
   HTMLElement,

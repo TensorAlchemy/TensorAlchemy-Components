@@ -1,7 +1,7 @@
 import React, {forwardRef, ElementRef, ComponentPropsWithoutRef} from "react"
 import {Root, Indicator} from "@radix-ui/react-progress"
 
-import {cn} from "@app/utils"
+import {cn} from "../utils.js"
 
 const Progress = forwardRef<
   ElementRef<typeof Root>,

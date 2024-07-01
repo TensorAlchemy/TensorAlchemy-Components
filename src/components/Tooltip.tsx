@@ -1,7 +1,7 @@
 import React, {forwardRef, ElementRef, ComponentPropsWithoutRef} from "react"
 import {Root, Provider, Trigger, Content} from "@radix-ui/react-tooltip"
 
-import {cn} from "@app/utils"
+import {cn} from "../utils.js"
 
 interface TooltipProviderProps {}
 

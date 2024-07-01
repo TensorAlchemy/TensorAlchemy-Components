@@ -17,7 +17,7 @@ import {
 import {cva, type VariantProps} from "class-variance-authority"
 import {X} from "lucide-react"
 
-import {cn} from "@app/utils"
+import {cn} from "../utils.js"
 
 const Sheet = Root
 const SheetTrigger = Trigger

@@ -1,7 +1,7 @@
 import React, {forwardRef, ElementRef, ComponentPropsWithoutRef} from "react"
 import {Root, Content, Trigger} from "@radix-ui/react-hover-card"
 
-import {cn} from "@app/utils"
+import {cn} from "../utils.js"
 
 const HoverCard = Root
 const HoverCardTrigger = Trigger

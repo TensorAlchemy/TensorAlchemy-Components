@@ -2,7 +2,7 @@ import React, {forwardRef, ElementRef, ComponentPropsWithoutRef} from "react"
 import {Root, Item, Indicator} from "@radix-ui/react-radio-group"
 import {Circle} from "lucide-react"
 
-import {cn} from "@app/utils"
+import {cn} from "../utils.js"
 
 const RadioGroup = forwardRef<
   ElementRef<typeof Root>,

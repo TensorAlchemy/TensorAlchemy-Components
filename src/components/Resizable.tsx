@@ -2,7 +2,7 @@ import React, {ComponentProps} from "react"
 import {GripVertical} from "lucide-react"
 import {PanelGroup, Panel, PanelResizeHandle} from "react-resizable-panels"
 
-import {cn} from "@app/utils"
+import {cn} from "../utils.js"
 
 const ResizablePanelGroup = ({
   className,

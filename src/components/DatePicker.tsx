@@ -2,10 +2,10 @@ import React, {useState} from "react"
 import {format} from "date-fns"
 import {Calendar as CalendarIcon} from "lucide-react"
 
-import {cn} from "@app/utils"
-import {Button} from "@components/Button"
-import {Calendar} from "@components/Calendar"
-import {Popover, PopoverContent, PopoverTrigger} from "@components/Popover"
+import {cn} from "../utils.js"
+import {Button} from "../components/Button.js"
+import {Calendar} from "../components/Calendar.js"
+import {Popover, PopoverContent, PopoverTrigger} from "../components/Popover.js"
 
 const DatePicker = () => {
   const [date, setDate] = useState<Date>()

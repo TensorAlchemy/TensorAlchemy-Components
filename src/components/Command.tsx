@@ -8,8 +8,8 @@ import {type DialogProps} from "@radix-ui/react-dialog"
 import {Command as CommandPrimitive} from "cmdk"
 import {Search} from "lucide-react"
 
-import {cn} from "@app/utils"
-import {Dialog, DialogContent} from "@components/Dialog"
+import {cn} from "../utils.js"
+import {Dialog, DialogContent} from "../components/Dialog.js"
 
 const {Empty, Group, List, Separator, Item, Input, displayName} = {...CommandPrimitive}
 

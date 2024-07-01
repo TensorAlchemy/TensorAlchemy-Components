@@ -8,8 +8,8 @@ import React, {
 import {Root, Item} from "@radix-ui/react-toggle-group"
 import {VariantProps} from "class-variance-authority"
 
-import {cn} from "@app/utils"
-import {toggleVariants} from "@components/Toggle"
+import {cn} from "../utils.js"
+import {toggleVariants} from "../components/Toggle.js"
 
 const ToggleGroupContext = createContext<VariantProps<typeof toggleVariants>>({
   size: "default",

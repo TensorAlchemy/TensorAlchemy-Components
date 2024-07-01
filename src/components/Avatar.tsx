@@ -1,7 +1,7 @@
 import React, {forwardRef, ElementRef, ComponentPropsWithoutRef} from "react"
 import {Root, Image, Fallback} from "@radix-ui/react-avatar"
 
-import {cn} from "@app/utils"
+import {cn} from "../utils.js"
 
 const Avatar = forwardRef<
   ElementRef<typeof Root>,
