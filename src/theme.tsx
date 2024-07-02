@@ -1,70 +1,70 @@
-import React, {createContext, useContext, useState, useEffect} from "react"
+import React, {createContext, useContext, useState, useEffect} from 'react'
 
-import type {FC, ReactNode} from "react"
+import type {FC, ReactNode} from 'react'
 
-export enum ThemeMode {
-  LIGHT = "light",
-  DARK = "dark",
+export enum Theme {
+  LIGHT = 'light',
+  DARK = 'dark',
 }
 
-interface Theme {
-  themeMode: ThemeMode
-  setThemeMode: () => void
+interface ThemeContext {
+  theme: Theme
+  setThemeMode: (themeMode: Theme) => void
 }
 
-const ThemeContext = createContext({})
+const ThemeContext = createContext({} as ThemeContext)
 
 export const useThemeContext = () => useContext(ThemeContext)
 
-const getSystemThemeMode = (): ThemeMode =>
-  window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? ThemeMode.DARK
-    : ThemeMode.LIGHT
+const getSystemTheme = (): Theme =>
+  window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? Theme.DARK
+    : Theme.LIGHT
 
 const styles = {
   light: {
-    background: 'var(--light-background)',
-    foreground: 'var(--light-foreground)',
+    '--background': '--light-background',
+    '--foreground': '--light-foreground',
   },
   dark: {
-    background: 'var(--dark-background)',
-    foreground: 'var(--dark-foreground)',
-  }
+    '--background': '--dark-background',
+    '--foreground': '--dark-foreground',
+  },
 }
 
 interface Props {
   children?: ReactNode
 }
 
-const Theme: FC<Props> = ({children}: Props) => {
-  const [themeMode, setThemeMode] = useState<ThemeMode | null>(null)
+const ThemeProvider: FC<Props> = ({children}: Props) => {
+  const [theme, setTheme] = useState<Theme | null>(null)
 
-  const applyStyles = (themeMode: ThemeMode) => {
-    const style = styles[themeMode]
+  const applyStyles = (theme: Theme) => {
+    const style = styles[theme]
 
     for (const [key, value] of Object.entries(style)) {
-      document.documentElement.style.setProperty(`--${key}`, `--${value}`)
+      document.documentElement.style.setProperty(`${key}`, `${value}`)
     }
   }
 
   useEffect(() => {
-    const theme = (localStorage.getItem("theme") || getSystemThemeMode()) as ThemeMode
+    const theme = (localStorage.getItem('theme') || getSystemTheme()) as Theme
 
     if (theme) {
       applyStyles(theme)
-      setThemeMode(theme)
+      setTheme(theme)
     }
   }, [])
 
   const value = {
-    themeMode,
-    setThemeMode: (themeMode: ThemeMode) => {
-      applyStyles(themeMode)
-      setThemeMode(themeMode)
+    theme,
+    setThemeMode: (theme: Theme) => {
+      applyStyles(theme)
+      setTheme(theme)
     },
   }
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
 }
 
-export {Theme}
+export {ThemeProvider}

@@ -1,7 +1,7 @@
-import js from "@eslint/js"
-import tseslint from "typescript-eslint"
-import reactConfig from "eslint-plugin-react/configs/recommended.js"
-import globals from "globals"
+import js from '@eslint/js'
+import tseslint from 'typescript-eslint'
+import reactConfig from 'eslint-plugin-react/configs/recommended.js'
+import globals from 'globals'
 
 export default [
   js.configs.recommended,
@@ -11,7 +11,7 @@ export default [
     languageOptions: {
       ...reactConfig.languageOptions,
       ecmaVersion: 2022,
-      sourceType: "module",
+      sourceType: 'module',
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
@@ -23,14 +23,14 @@ export default [
     },
     settings: {
       react: {
-        version: "detect",
+        version: 'detect',
       },
     },
     rules: {
-      "@typescript-eslint/no-unused-vars": "off",
-      "react/jsx-uses-react": "error",
-      "react/jsx-uses-vars": "error",
-      "react/prop-types": "off",
+      '@typescript-eslint/no-unused-vars': 'off',
+      'react/jsx-uses-react': 'error',
+      'react/jsx-uses-vars': 'error',
+      'react/prop-types': 'off',
     },
   },
 ]
