@@ -4,6 +4,7 @@ import {fileURLToPath} from 'url'
 import webpack from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import CssMinimizerWebpackPlugin from 'css-minimizer-webpack-plugin'
+import TerserWebpackPlugin from 'terser-webpack-plugin'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -14,23 +15,22 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'lib'),
     filename: 'index.js',
+    library: {
+      type: 'module',
+    },
     clean: true,
   },
   target: 'web',
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/i,
+        test: /\.tsx?$/i,
         loader: 'ts-loader',
         exclude: ['/node_modules/'],
       },
       {
         test: /\.scss$/i,
-        use: [
-          production ? MiniCssExtractPlugin.loader : 'style-loader',
-          'css-loader',
-          'sass-loader',
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif|ico)$/i,
@@ -47,6 +47,9 @@ const config = {
       '@assets': path.resolve(__dirname, 'src/assets'),
     },
   },
+  externals: {
+    react: 'react',
+  },
   plugins: [
     new webpack.DefinePlugin({}),
     new MiniCssExtractPlugin({
@@ -55,7 +58,11 @@ const config = {
     }),
   ],
   optimization: {
-    minimizer: [new CssMinimizerWebpackPlugin()],
+    minimize: true,
+    minimizer: [new CssMinimizerWebpackPlugin(), new TerserWebpackPlugin()],
+  },
+  experiments: {
+    outputModule: true,
   },
 }
 

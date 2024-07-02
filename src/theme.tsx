@@ -32,11 +32,11 @@ const styles = {
   },
 }
 
-interface Props {
+interface ThemeProviderProps {
   children?: ReactNode
 }
 
-const ThemeProvider: FC<Props> = ({children}: Props) => {
+const ThemeProvider: FC<ThemeProviderProps> = ({children}: ThemeProviderProps) => {
   const [theme, setTheme] = useState<Theme | null>(null)
 
   const applyStyles = (theme: Theme) => {
