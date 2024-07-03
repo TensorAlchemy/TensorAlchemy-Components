@@ -1,24 +1,23 @@
 {
+  "include": ["src/**/*.ts", "src/**/*.tsx", "types.d.ts"],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
-    "module": "es6",
-    "target": "es5",
-    "allowJs": true,
+    "module": "preserve",
+    "target": "es6",
+    "allowJs": false,
     "jsx": "react",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "baseUrl": ".",
+    "outDir": "lib",
+    "declaration": true,
+    "declarationDir": "lib/index.d.ts",
+    "typeRoots": ["node_modules/@types", "types.d.ts"],
     "paths": {
       "@app/*": ["src/*"],
-      "@context/*": ["src/context/*"],
       "@hooks/*": ["src/hooks/*"],
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"]
-    },
-    "outDir": "lib",
-    "declaration": true,
-    "declarationDir": "lib/types.ts",
-    "typeRoots": ["node_modules/@types", "types.d.ts"]
-  },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "types.d.ts"]
+    }
+  }
 }
