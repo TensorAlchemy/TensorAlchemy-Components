@@ -17,9 +17,6 @@
     "type": "git",
     "url": "git+https://github.com/TensorAlchemy/TensorAlchemy-Components.git"
   },
-  "publishConfig": {
-    "@TensorAlchemy:registry": "https://npm.pkg.github.com"
-  },
   "type": "module",
   "main": "index.js",
   "scripts": {
