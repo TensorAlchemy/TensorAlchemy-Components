@@ -11,7 +11,7 @@ TensorAlchemy components library.
 
 ## Setup
 
-`npm i @TensorAlchemy/tensoralchemy-components`
+`npm i @tensoralchemy/tensoralchemy-components`
 
 ## Usage
 
