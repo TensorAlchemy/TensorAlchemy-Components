@@ -1,5 +1,5 @@
 {
-  "name": "tensoralchemy-components",
+  "name": "@tensoralchemy/tensoralchemy-components",
   "private": false,
   "version": "0.0.1",
   "description": "TensorAlchemy Components",
@@ -17,9 +17,6 @@
     "type": "git",
     "url": "git+https://github.com/TensorAlchemy/TensorAlchemy-Components.git"
   },
-  "publishConfig": {
-    "@TensorAlchemy:registry": "https://npm.pkg.github.com"
-  },
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -30,6 +27,10 @@
     "lint": "eslint src",
     "prepare": "husky"
   },
+  "files": [
+    "lib",
+    "assets"
+  ],
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.4",
