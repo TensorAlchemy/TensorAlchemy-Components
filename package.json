@@ -1,7 +1,7 @@
 {
   "name": "tensoralchemy-components",
   "private": false,
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "TensorAlchemy Components",
   "keywords": [
     "TensorAlchemy",
@@ -17,9 +17,8 @@
     "type": "git",
     "url": "git+https://github.com/TensorAlchemy/TensorAlchemy-Components.git"
   },
-  "engines": {
-    "node": ">= 22.2.0",
-    "npm": ">= 10.7.0"
+  "publishConfig": {
+    "@TensorAlchemy:registry": "https://npm.pkg.github.com"
   },
   "type": "module",
   "main": "index.js",

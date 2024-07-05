@@ -11,7 +11,7 @@ TensorAlchemy components library.
 
 ## Setup
 
-`npm i https://github.com/TensorAlchemy/TensorAlchemy-Components`
+`npm i @TensorAlchemy/tensoralchemy-components`
 
 ## Usage
 
@@ -22,7 +22,8 @@ TensorAlchemy components library.
 
 ## Development
 
-~ Run `npm link` inside the `TensorAlchemy-Components` project.  
-~ Run `npm link tensoralchemy-components` inside the other local project where you want to use the components.
+~ `npm run dev` will continuously compile typescript and scss.  
+~ `npm link` inside the `TensorAlchemy-Components` project.  
+~ `npm link tensoralchemy-components` inside the other local project where you want to use the components.
 
-That will create a symlink to the component library inside the project's node_modules, then you can continue developing on the component library and any changes will directly reflect in the other project.
+> After `npm run dev` and `npm link` any file changes should directly reflect in the other project.
