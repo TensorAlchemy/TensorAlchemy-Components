@@ -2,22 +2,26 @@
 @import 'components/Heading.scss';
 @import 'components/Link.scss';
 
+html {
+  font-family: 'sans-serif';
+}
+
 :root {
   --color-background: #1a3144;
   --color-foreground: #223b50;
-  --color-text: #c0c0c0;
+  --color-text: #d0d0d0;
   --color-text-heading: #c0c0c0;
   --color-text-link: #c0c0c0;
 
   --light-color-background: #1a3144;
   --light-color-foreground: #223b50;
-  --light-color-text: #c0c0c0;
+  --light-color-text: #d0d0d0;
   --light-color-text-heading: #c0c0c0;
   --light-color-text-link: #c0c0c0;
 
   --dark-color-background: #1a3144;
   --dark-color-foreground: #223b50;
-  --dark-color-text: #c0c0c0;
+  --dark-color-text: #d0d0d0;
   --dark-color-text-heading: #c0c0c0;
   --dark-color-text-link: #c0c0c0;
 
