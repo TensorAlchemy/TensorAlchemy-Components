@@ -1,4 +1,9 @@
-import '@app/style'
+export * from './theme.js'
 
-export * from '@app/theme'
-export * from '@components/container'
+export * from './icons.js'
+export * from './images.js'
+
+export * from './components/Container.js'
+export * from './components/Heading.js'
+export * from './components/Image.js'
+export * from './components/Link.js'

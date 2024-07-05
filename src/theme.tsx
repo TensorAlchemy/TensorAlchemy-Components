@@ -1,3 +1,5 @@
+'use client'
+
 import React, {createContext, useContext, useState, useEffect} from 'react'
 
 import type {FC, ReactNode} from 'react'
@@ -21,16 +23,13 @@ const getSystemTheme = (): Theme =>
     ? Theme.DARK
     : Theme.LIGHT
 
-const styles = {
-  light: {
-    '--background': '--light-background',
-    '--foreground': '--light-foreground',
-  },
-  dark: {
-    '--background': '--dark-background',
-    '--foreground': '--dark-foreground',
-  },
-}
+const variables = [
+  'color-background',
+  'color-foreground',
+  'color-text',
+  'color-text-heading',
+  'color-text-link',
+]
 
 interface ThemeProviderProps {
   children?: ReactNode
@@ -40,10 +39,11 @@ const ThemeProvider: FC<ThemeProviderProps> = ({children}: ThemeProviderProps) =
   const [theme, setTheme] = useState<Theme | null>(null)
 
   const applyStyles = (theme: Theme) => {
-    const style = styles[theme]
-
-    for (const [key, value] of Object.entries(style)) {
-      document.documentElement.style.setProperty(`${key}`, `${value}`)
+    for (const variable of variables) {
+      document.documentElement.style.setProperty(
+        `--${variable}`,
+        `var(--${theme}-${variable})`,
+      )
     }
   }
 
